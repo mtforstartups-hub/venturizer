@@ -11,8 +11,10 @@ const valueData = [
     title: "Founders",
     icon: Handshake,
     color: "text-[#22418F]",
+    hex: "#22418F",
     bg: "bg-blue-50",
     activeBorder: "border-[#22418F]",
+    label: "01",
     desc: "We provide end-to-end business design, GTM strategies, operational frameworks, compliance, and funding support.",
     list: [
       "Fractional Co-building",
@@ -26,8 +28,10 @@ const valueData = [
     title: "Investors",
     icon: Banknote,
     color: "text-[#2A2A2A]",
+    hex: "#2A2A2A",
     bg: "bg-gray-100",
     activeBorder: "border-[#2A2A2A]",
+    label: "02",
     desc: "Access high-quality, fundamentally validated early-stage opportunities with complete transparency.",
     list: [
       "Transparent Operational Visibility",
@@ -41,8 +45,10 @@ const valueData = [
     title: "Mentors & Advisors",
     icon: Users,
     color: "text-[#EF3F3C]",
+    hex: "#EF3F3C",
     bg: "bg-red-50",
     activeBorder: "border-[#EF3F3C]",
+    label: "03",
     desc: "Engage in structured, outcome-driven relationships with high-potential, rapidly scaling startups.",
     list: [
       "Access to curated founders",
@@ -78,6 +84,21 @@ const itemVariants = {
   },
 } as const;
 
+// Decorative 3×3 dot grid
+function DotGrid({ color }: { color: string }) {
+  return (
+    <div className="grid grid-cols-3 gap-1.5">
+      {Array.from({ length: 9 }).map((_, i) => (
+        <div
+          key={i}
+          className="w-1 h-1 rounded-full transition-all duration-500"
+          style={{ background: color, opacity: 0.25 + (i % 3) * 0.15 }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function ValueCreation() {
   const [activeTab, setActiveTab] = useState(valueData[0].id);
   const activeContent = valueData.find((item) => item.id === activeTab);
@@ -102,95 +123,131 @@ export default function ValueCreation() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
-          {/* ── Left Column: L-Shaped Grid ── */}
-          {/* Increased gap and controlled max-width so the cards aren't huge */}
+          {/* ── Left Column: 2×2 Grid ── */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <div className="grid grid-cols-2 gap-8 md:gap-10 w-full max-w-120">
-              {/* Position 1: Top Left (Founders) */}
-              <button
-                onClick={() => setActiveTab(valueData[0].id)}
-                className={`relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-300 aspect-square
-                  ${activeTab === valueData[0].id
-                    ? `${valueData[0].activeBorder} bg-white shadow-xl scale-[1.02] z-10`
-                    : "border-gray-100 bg-gray-50/80 hover:bg-white hover:border-gray-200 hover:shadow-md"
-                  }`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300 ${activeTab === valueData[0].id ? valueData[0].bg : "bg-white border border-gray-200"}`}
-                >
-                  <Handshake
-                    className={`w-7 h-7 transition-colors duration-300 ${activeTab === valueData[0].id ? valueData[0].color : "text-gray-400"}`}
-                  />
-                </div>
-                <h4
-                  className={`text-xl font-bold transition-colors duration-300 ${activeTab === valueData[0].id ? "text-[#2A2A2A]" : "text-gray-500"}`}
-                >
-                  {valueData[0].title}
-                </h4>
-              </button>
 
-              {/* Position 2: Top Right (Subtle Floating SVG Area) */}
-              <div className="relative flex items-center justify-center aspect-square opacity-80 pointer-events-none">
-                {/* Drop your raw animated SVG right here! 
-                  No background, no borders. It will blend seamlessly.
-                */}
-                {/* <div className="w-24 h-24 border-2 border-dashed border-[#22418F]/20 rounded-full animate-[spin_15s_linear_infinite] flex items-center justify-center relative">
-                  <div className="absolute w-16 h-16 border-2 border-[#EF3F3C]/20 rounded-full animate-[spin_10s_linear_infinite_reverse]" />
-                  <div className="w-2 h-2 bg-[#2A2A2A]/20 rounded-full animate-pulse" />
-                </div> */}
+              {/* ── Card: Founders (Top Left) ── */}
+              {[valueData[0], null, valueData[1], valueData[2]].map((item, idx) => {
+                // Position 2 (idx=1) is the Lottie animation slot
+                if (!item) {
+                  return (
+                    <div
+                      key="lottie"
+                      className="relative flex items-center justify-center aspect-square opacity-80 pointer-events-none"
+                    >
+                      <DotLottieReact src="Startup.lottie" loop autoplay />
+                    </div>
+                  );
+                }
 
-                <DotLottieReact src="Startup.lottie" loop autoplay />
-              </div>
+                const isActive = activeTab === item.id;
+                const Icon = item.icon;
 
-              {/* Position 3: Bottom Left (Investors) */}
-              <button
-                onClick={() => setActiveTab(valueData[1].id)}
-                className={`relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-300 aspect-square
-                  ${activeTab === valueData[1].id
-                    ? `${valueData[1].activeBorder} bg-white shadow-xl scale-[1.02] z-10`
-                    : "border-gray-100 bg-gray-50/80 hover:bg-white hover:border-gray-200 hover:shadow-md"
-                  }`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300 ${activeTab === valueData[1].id ? valueData[1].bg : "bg-white border border-gray-200"}`}
-                >
-                  <Banknote
-                    className={`w-7 h-7 transition-colors duration-300 ${activeTab === valueData[1].id ? valueData[1].color : "text-gray-400"}`}
-                  />
-                </div>
-                <h4
-                  className={`text-xl font-bold transition-colors duration-300 ${activeTab === valueData[1].id ? "text-[#2A2A2A]" : "text-gray-500"}`}
-                >
-                  {valueData[1].title}
-                </h4>
-              </button>
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveTab(item.id)}
+                    className="relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-400 aspect-square overflow-hidden group"
+                    style={{
+                      borderColor: isActive ? item.hex : "#f3f4f6",
+                      background: isActive
+                        ? `linear-gradient(145deg, ${item.hex}0f 0%, #ffffff 55%)`
+                        : "rgba(249, 250, 251, 0.85)",
+                      boxShadow: isActive
+                        ? `0 16px 48px ${item.hex}22, 0 4px 16px ${item.hex}14`
+                        : "0 1px 4px rgba(0,0,0,0.04)",
+                      transform: isActive ? "scale(1.03)" : "scale(1)",
+                      zIndex: isActive ? 10 : 1,
+                    }}
+                  >
+                    {/* ── Watermark icon (bottom-right, large) ── */}
+                    <div className="absolute -bottom-3 -right-3 pointer-events-none transition-all duration-400">
+                      <Icon
+                        className="transition-all duration-400"
+                        style={{
+                          width: 88,
+                          height: 88,
+                          color: item.hex,
+                          opacity: isActive ? 0.07 : 0.04,
+                          transform: "rotate(-12deg)",
+                        }}
+                      />
+                    </div>
 
-              {/* Position 4: Bottom Right (Mentors) */}
-              <button
-                onClick={() => setActiveTab(valueData[2].id)}
-                className={`relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-300 aspect-square
-                  ${activeTab === valueData[2].id
-                    ? `${valueData[2].activeBorder} bg-white shadow-xl scale-[1.02] z-10`
-                    : "border-gray-100 bg-gray-50/80 hover:bg-white hover:border-gray-200 hover:shadow-md"
-                  }`}
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300 ${activeTab === valueData[2].id ? valueData[2].bg : "bg-white border border-gray-200"}`}
-                >
-                  <Users
-                    className={`w-7 h-7 transition-colors duration-300 ${activeTab === valueData[2].id ? valueData[2].color : "text-gray-400"}`}
-                  />
-                </div>
-                <h4
-                  className={`text-xl font-bold transition-colors duration-300 ${activeTab === valueData[2].id ? "text-[#2A2A2A]" : "text-gray-500"}`}
-                >
-                  {valueData[2].title}
-                </h4>
-              </button>
+                    {/* ── Top-left dot grid ── */}
+                    <div className="absolute top-3.5 left-3.5">
+                      <DotGrid color={isActive ? item.hex : "#9ca3af"} />
+                    </div>
+
+                    {/* ── Top-right number badge ── */}
+                    <div
+                      className="absolute top-3.5 right-4 text-[10px] font-bold tracking-widest transition-all duration-300"
+                      style={{
+                        color: isActive ? item.hex : "#d1d5db",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      {item.label}
+                    </div>
+
+                    {/* ── Active: top accent bar ── */}
+                    <div
+                      className="absolute top-0 left-8 right-8 h-[3px] rounded-b-full transition-all duration-400"
+                      style={{
+                        background: `linear-gradient(90deg, transparent, ${item.hex}, transparent)`,
+                        opacity: isActive ? 1 : 0,
+                        transform: isActive ? "scaleX(1)" : "scaleX(0.3)",
+                      }}
+                    />
+
+                    {/* ── Icon container ── */}
+                    <div
+                      className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-400"
+                      style={
+                        isActive
+                          ? {
+                            background: `linear-gradient(135deg, ${item.hex}22, ${item.hex}0a)`,
+                            boxShadow: `0 4px 16px ${item.hex}20`,
+                            border: `1px solid ${item.hex}30`,
+                          }
+                          : {
+                            background: "white",
+                            border: "1px solid #e5e7eb",
+                          }
+                      }
+                    >
+                      <Icon
+                        className="w-7 h-7 transition-all duration-400"
+                        style={{ color: isActive ? item.hex : "#9ca3af" }}
+                      />
+                    </div>
+
+                    {/* ── Title ── */}
+                    <h4
+                      className="text-xl font-bold transition-colors duration-300 relative z-10"
+                      style={{ color: isActive ? "#2A2A2A" : "#6b7280" }}
+                    >
+                      {item.title}
+                    </h4>
+
+                    {/* ── Hover shimmer (inactive only) ── */}
+                    {!isActive && (
+                      <div
+                        className="absolute inset-0 rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        style={{
+                          background:
+                            "linear-gradient(145deg, rgba(255,255,255,0.8) 0%, transparent 60%)",
+                        }}
+                      />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* ── Right Column: Dynamic Content Window (Big Text) ── */}
+          {/* ── Right Column: Dynamic Content Window ── */}
           <div className="w-full lg:w-1/2 min-h-87.5 flex items-center">
             <AnimatePresence mode="wait">
               {activeContent && (
@@ -205,7 +262,7 @@ export default function ValueCreation() {
                   {/* Big Description */}
                   <motion.p
                     variants={itemVariants}
-                    className="text-2xl md:text-3xl lg:text-[2.1rem] font-medium text-[#2A2A2A] leading-tight md:leading-snug mb-10 md:mb-12"
+                    className="text-2xl md:text-3xl lg:text-[2.1rem] font-medium text-[#2A2A2A] mb-10 md:mb-12"
                   >
                     {activeContent.desc}
                   </motion.p>
@@ -223,7 +280,7 @@ export default function ValueCreation() {
                             className={`w-4 h-4 ${activeContent.color.replace("text-", "text-")}`}
                           />
                         </div>
-                        <span className="leading-snug">{li}</span>
+                        <span className="">{li}</span>
                       </motion.li>
                     ))}
                   </motion.ul>

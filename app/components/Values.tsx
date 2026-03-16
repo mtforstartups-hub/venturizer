@@ -46,21 +46,14 @@ export default function Values() {
                 </div>
 
                 {/* Values Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16">
+                <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
                     {values.map((v, idx) => (
-                        <div key={idx} className="group relative flex flex-col items-start">
-                            {/* Icon Container with subtle interactions */}
-                            <div
-                                className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ease-out group-hover:-translate-y-1.5 ${v.colorClass}`}
-                            >
+                        <div key={idx} className="bg-white/80 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div className={`w-14 h-14 rounded-lg flex items-center justify-center mb-6 transition-colors ${v.colorClass}`}>
                                 {v.icon}
                             </div>
-
-                            {/* Typography */}
-                            <h4 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight">
-                                {v.title}
-                            </h4>
-                            <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                            <h4 className="text-xl font-bold text-gray-900 mb-3">{v.title}</h4>
+                            <p className="text-gray-600 leading-relaxed">
                                 {v.desc}
                             </p>
                         </div>

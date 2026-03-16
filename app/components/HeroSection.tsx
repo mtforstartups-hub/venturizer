@@ -1,25 +1,25 @@
-"use client";
+// "use client";
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function HeroSection() {
   // 1. Setup our rotating words in React State
-  const [index, setIndex] = useState(0);
-  const words = [
-    { text: "Build", color: "text-blue-200" },
-    { text: "Invest In", color: "text-blue-200" },
-    { text: "Support", color: "text-blue-200" },
-  ];
+  // const [index, setIndex] = useState(0);
+  // const words = [
+  //   { text: "Build", color: "text-blue-200" },
+  //   { text: "Invest In", color: "text-blue-200" },
+  //   { text: "Support", color: "text-blue-200" },
+  // ];
 
   // 2. Cycle to the next word every 3 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % words.length);
+  //   }, 3000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function HeroSection() {
         `}
       </style>
 
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-20 overflow-hidden bg-[#22418F] text-center">
+      <section className="relative min-h-[95vh] flex flex-col justify-center items-center pt-20 overflow-hidden bg-[#22418F] text-center">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-t from-[#22418F] to-[#0A1838]"></div>
 
@@ -63,23 +63,26 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-blue-100 text-sm font-medium mb-10 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             World&apos;s First Venture Capability Ecosystem
-            <div className="absolute opacity-80 -right-50">
+            <div className="absolute opacity-80 -right-65">
               <DotLottieReact src="Paperplane.lottie" loop autoplay />
             </div>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-8xl font-bold text-white leading-tight mb-8 flex flex-col items-center">
-            {/* 4. This container now perfectly shrink-wraps and centers automatically! */}
+
+          {/* old version march 16 */}
+          {/* <h1 className="text-5xl md:text-8xl font-bold text-white leading-tight mb-8 flex flex-col items-center">
+
             <span className="flex items-center gap-3 md:gap-4 min-h-[1.2em]">
               <span
                 key={
                   index
-                } /* The key forces React to trigger the CSS animation on every word swap */
+                } 
                 className={`animate-flip-single ${words[index].color}`}
               >
                 {words[index].text}
-              </span>
+              </span> 
+              <span>Build</span>
               <span>Resilient</span>
             </span>
 
@@ -87,6 +90,19 @@ export default function HeroSection() {
               High-Growth
             </span>
             <span className="block mt-2">Ventures</span>
+          </h1> */}
+
+          {/* new version */}
+          <h1 className="text-5xl md:text-8xl font-bold text-white mb-8 flex flex-col items-center">
+            <span className="flex items-center gap-3 md:gap-4">
+              <span>Build</span>
+              <span>Resilient</span>
+            </span>
+
+            <span className="mt-mx md:mt-2 block text-transparent bg-clip-text bg-linear-to-r from-cyan-300 to-blue-200">
+              High-Growth
+            </span>
+            <span className="block mt-mx">Ventures</span>
           </h1>
 
           {/* Subtext */}
@@ -113,9 +129,9 @@ export default function HeroSection() {
                 size={20}
                 className="group-hover:translate-x-1 transition-transform"
               />
-              <div className="absolute w-80 h-40 -right-65 -top-45 -z-10 opacity-60">
+              {/* <div className="absolute w-80 h-40 -right-65 -top-45 -z-10 opacity-60">
                 <DotLottieReact src="Startup.lottie" loop autoplay />
-              </div>
+              </div> */}
             </button>
           </div>
         </div>

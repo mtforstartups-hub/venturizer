@@ -68,14 +68,14 @@ export default function Solution360() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[24px_24px]" />
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-        <div className="text-center mb-24">
+        <div className="text-center mb-8">
           <span className="text-lg md:text-xl  text-[#21428E] -rotate-2 mb-4 block">
             360° Support
           </span>
           <h3 className="text-4xl md:text-5xl font-bold text-[#2A2A2A]">
             Everything You Need to Scale
           </h3>
-          <p className="text-gray-500 mt-6 max-w-2xl mx-auto text-lg md:text-xl">
+          <p className="text-gray-500 mt-6 max-w-2xl mx-auto">
             A robust ecosystem to orchestrate your startup&apos;s success — all
             in one place.
           </p>
@@ -196,11 +196,10 @@ export default function Solution360() {
                   }}
                 >
                   <span
-                    className={`text-base font-bold tracking-wide whitespace-nowrap px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border transition-colors duration-300 ${
-                      isActive
-                        ? "text-[#EF3F3C] border-[#EF3F3C]/30 shadow-md"
-                        : "text-[#2A2A2A] border-transparent shadow-sm"
-                    }`}
+                    className={`text-base font-bold tracking-wide whitespace-nowrap px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border transition-colors duration-300 ${isActive
+                      ? "text-[#EF3F3C] border-[#EF3F3C]/30 shadow-md"
+                      : "text-[#2A2A2A] border-transparent shadow-sm"
+                      }`}
                   >
                     {s.title}
                   </span>
@@ -265,10 +264,9 @@ export default function Solution360() {
                         // Explicit strict sizing prevents pill shapes!
                         style={{ width: ICON_SIZE, height: ICON_SIZE }}
                         className={`rounded-full shadow-xl border-4 flex items-center justify-center cursor-pointer transition-colors duration-300
-                          ${
-                            isActive
-                              ? "bg-[#21428E] border-[#EF3F3C] text-white"
-                              : "bg-white border-[#21428E] text-[#21428E] hover:border-[#EF3F3C] hover:text-[#EF3F3C]"
+                          ${isActive
+                            ? "bg-[#21428E] border-[#EF3F3C] text-white"
+                            : "bg-white border-[#21428E] text-[#21428E] hover:border-[#EF3F3C] hover:text-[#EF3F3C]"
                           }`}
                         onMouseEnter={() => {
                           setIsPaused(true);

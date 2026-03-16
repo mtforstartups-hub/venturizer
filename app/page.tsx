@@ -10,6 +10,7 @@ import WhatWeDoV2 from "./components/WhatWeDoV2";
 import ValueCreation from "./components/ValueCreation";
 import ContactForm from "./components/ContactForm";
 import ThreeUsed from "./components/ThreeUsed";
+import ValueCreationV2 from "./components/ValueCreationV2";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Solution360 />
       {/* <WhatWeDo /> */}
       <WhatWeDoV2 />
+      {/* <ValueCreationV2 /> */}
       <ValueCreation />
       {/* <Sectors />
       <TeamAndPartners /> */}
