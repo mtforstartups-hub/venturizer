@@ -71,7 +71,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* Desktop Accordion */}
-        <div className="hidden md:flex h-150 w-full gap-4">
+        <div className="hidden md:flex h-100 w-full gap-4">
           {pillars.map((pillar) => (
             <motion.div
               key={pillar.id}

@@ -125,7 +125,7 @@ export default function Solution360() {
           <motion.div
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-30 size-48 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
+            className="absolute z-30 size-50 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
           >
             {active ? (
               <motion.div

@@ -111,7 +111,7 @@ export default function ValueCreation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-lg md:text-xl text-[#EF3F3C] -rotate-2 mb-4 inline-block ">
-            Who We Serve
+            Our Impact Circle
           </span>
           <h3 className="text-4xl md:text-5xl font-bold text-[#2A2A2A]">
             Designed for Value Creation
@@ -126,124 +126,125 @@ export default function ValueCreation() {
           {/* ── Left Column: 2×2 Grid ── */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <div className="grid grid-cols-2 gap-8 md:gap-10 w-full max-w-120">
-
               {/* ── Card: Founders (Top Left) ── */}
-              {[valueData[0], null, valueData[1], valueData[2]].map((item, idx) => {
-                // Position 2 (idx=1) is the Lottie animation slot
-                if (!item) {
-                  return (
-                    <div
-                      key="lottie"
-                      className="relative flex items-center justify-center aspect-square opacity-80 pointer-events-none"
-                    >
-                      <DotLottieReact src="Startup.lottie" loop autoplay />
-                    </div>
-                  );
-                }
-
-                const isActive = activeTab === item.id;
-                const Icon = item.icon;
-
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => setActiveTab(item.id)}
-                    className="relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-400 aspect-square overflow-hidden group"
-                    style={{
-                      borderColor: isActive ? item.hex : "#f3f4f6",
-                      background: isActive
-                        ? `linear-gradient(145deg, ${item.hex}0f 0%, #ffffff 55%)`
-                        : "rgba(249, 250, 251, 0.85)",
-                      boxShadow: isActive
-                        ? `0 16px 48px ${item.hex}22, 0 4px 16px ${item.hex}14`
-                        : "0 1px 4px rgba(0,0,0,0.04)",
-                      transform: isActive ? "scale(1.03)" : "scale(1)",
-                      zIndex: isActive ? 10 : 1,
-                    }}
-                  >
-                    {/* ── Watermark icon (bottom-right, large) ── */}
-                    <div className="absolute -bottom-3 -right-3 pointer-events-none transition-all duration-400">
-                      <Icon
-                        className="transition-all duration-400"
-                        style={{
-                          width: 88,
-                          height: 88,
-                          color: item.hex,
-                          opacity: isActive ? 0.07 : 0.04,
-                          transform: "rotate(-12deg)",
-                        }}
-                      />
-                    </div>
-
-                    {/* ── Top-left dot grid ── */}
-                    <div className="absolute top-3.5 left-3.5">
-                      <DotGrid color={isActive ? item.hex : "#9ca3af"} />
-                    </div>
-
-                    {/* ── Top-right number badge ── */}
-                    <div
-                      className="absolute top-3.5 right-4 text-[10px] font-bold tracking-widest transition-all duration-300"
-                      style={{
-                        color: isActive ? item.hex : "#d1d5db",
-                        fontVariantNumeric: "tabular-nums",
-                      }}
-                    >
-                      {item.label}
-                    </div>
-
-                    {/* ── Active: top accent bar ── */}
-                    <div
-                      className="absolute top-0 left-8 right-8 h-[3px] rounded-b-full transition-all duration-400"
-                      style={{
-                        background: `linear-gradient(90deg, transparent, ${item.hex}, transparent)`,
-                        opacity: isActive ? 1 : 0,
-                        transform: isActive ? "scaleX(1)" : "scaleX(0.3)",
-                      }}
-                    />
-
-                    {/* ── Icon container ── */}
-                    <div
-                      className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-400"
-                      style={
-                        isActive
-                          ? {
-                            background: `linear-gradient(135deg, ${item.hex}22, ${item.hex}0a)`,
-                            boxShadow: `0 4px 16px ${item.hex}20`,
-                            border: `1px solid ${item.hex}30`,
-                          }
-                          : {
-                            background: "white",
-                            border: "1px solid #e5e7eb",
-                          }
-                      }
-                    >
-                      <Icon
-                        className="w-7 h-7 transition-all duration-400"
-                        style={{ color: isActive ? item.hex : "#9ca3af" }}
-                      />
-                    </div>
-
-                    {/* ── Title ── */}
-                    <h4
-                      className="text-xl font-bold transition-colors duration-300 relative z-10"
-                      style={{ color: isActive ? "#2A2A2A" : "#6b7280" }}
-                    >
-                      {item.title}
-                    </h4>
-
-                    {/* ── Hover shimmer (inactive only) ── */}
-                    {!isActive && (
+              {[valueData[0], null, valueData[1], valueData[2]].map(
+                (item, idx) => {
+                  // Position 2 (idx=1) is the Lottie animation slot
+                  if (!item) {
+                    return (
                       <div
-                        className="absolute inset-0 rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        key="lottie"
+                        className="relative flex items-center justify-center aspect-square opacity-80 pointer-events-none"
+                      >
+                        <DotLottieReact src="Startup.lottie" loop autoplay />
+                      </div>
+                    );
+                  }
+
+                  const isActive = activeTab === item.id;
+                  const Icon = item.icon;
+
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => setActiveTab(item.id)}
+                      className="relative flex flex-col items-center justify-center p-6 text-center rounded-4xl border-2 transition-all duration-400 aspect-square overflow-hidden group"
+                      style={{
+                        borderColor: isActive ? item.hex : "#f3f4f6",
+                        background: isActive
+                          ? `linear-gradient(145deg, ${item.hex}0f 0%, #ffffff 55%)`
+                          : "rgba(249, 250, 251, 0.85)",
+                        boxShadow: isActive
+                          ? `0 16px 48px ${item.hex}22, 0 4px 16px ${item.hex}14`
+                          : "0 1px 4px rgba(0,0,0,0.04)",
+                        transform: isActive ? "scale(1.03)" : "scale(1)",
+                        zIndex: isActive ? 10 : 1,
+                      }}
+                    >
+                      {/* ── Watermark icon (bottom-right, large) ── */}
+                      <div className="absolute -bottom-3 -right-3 pointer-events-none transition-all duration-400">
+                        <Icon
+                          className="transition-all duration-400"
+                          style={{
+                            width: 88,
+                            height: 88,
+                            color: item.hex,
+                            opacity: isActive ? 0.07 : 0.04,
+                            transform: "rotate(-12deg)",
+                          }}
+                        />
+                      </div>
+
+                      {/* ── Top-left dot grid ── */}
+                      <div className="absolute top-3.5 left-3.5">
+                        <DotGrid color={isActive ? item.hex : "#9ca3af"} />
+                      </div>
+
+                      {/* ── Top-right number badge ── */}
+                      <div
+                        className="absolute top-3.5 right-4 text-[10px] font-bold tracking-widest transition-all duration-300"
                         style={{
-                          background:
-                            "linear-gradient(145deg, rgba(255,255,255,0.8) 0%, transparent 60%)",
+                          color: isActive ? item.hex : "#d1d5db",
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {item.label}
+                      </div>
+
+                      {/* ── Active: top accent bar ── */}
+                      <div
+                        className="absolute top-0 left-8 right-8 h-0.75 rounded-b-full transition-all duration-400"
+                        style={{
+                          background: `linear-gradient(90deg, transparent, ${item.hex}, transparent)`,
+                          opacity: isActive ? 1 : 0,
+                          transform: isActive ? "scaleX(1)" : "scaleX(0.3)",
                         }}
                       />
-                    )}
-                  </button>
-                );
-              })}
+
+                      {/* ── Icon container ── */}
+                      <div
+                        className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-400"
+                        style={
+                          isActive
+                            ? {
+                                background: `linear-gradient(135deg, ${item.hex}22, ${item.hex}0a)`,
+                                boxShadow: `0 4px 16px ${item.hex}20`,
+                                border: `1px solid ${item.hex}30`,
+                              }
+                            : {
+                                background: "white",
+                                border: "1px solid #e5e7eb",
+                              }
+                        }
+                      >
+                        <Icon
+                          className="w-7 h-7 transition-all duration-400"
+                          style={{ color: isActive ? item.hex : "#9ca3af" }}
+                        />
+                      </div>
+
+                      {/* ── Title ── */}
+                      <h4
+                        className="text-xl font-bold transition-colors duration-300 relative z-10"
+                        style={{ color: isActive ? "#2A2A2A" : "#6b7280" }}
+                      >
+                        {item.title}
+                      </h4>
+
+                      {/* ── Hover shimmer (inactive only) ── */}
+                      {!isActive && (
+                        <div
+                          className="absolute inset-0 rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                          style={{
+                            background:
+                              "linear-gradient(145deg, rgba(255,255,255,0.8) 0%, transparent 60%)",
+                          }}
+                        />
+                      )}
+                    </button>
+                  );
+                },
+              )}
             </div>
           </div>
 
