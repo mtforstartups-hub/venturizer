@@ -40,7 +40,7 @@ export default function HeroSection() {
         `}
       </style>
 
-      <section className="relative min-h-[95vh] flex flex-col justify-center items-center pt-20 overflow-hidden bg-[#22418F] text-center">
+      <section className="relative min-h-screen md:min-h-[95vh] flex flex-col justify-center items-center pt-20 overflow-hidden bg-[#22418F] text-center">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-t from-[#22418F] to-[#0A1838]"></div>
 
@@ -56,6 +56,9 @@ export default function HeroSection() {
           {/* <DotLottieReact src="Paperplane.lottie" loop autoplay /> */}
           {/* </div> */}
           {/* ================================================================== */}
+          <div className="absolute opacity-80 top-20 sm:top-40 md:top-30 -right-30 md:-right-7 lg:right-20 xl:right-80 2xl:right-125 2xl:top-40 w-80 h-40">
+            <DotLottieReact src="Paperplane.lottie" loop autoplay />
+          </div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 max-w-5xl">
@@ -63,9 +66,9 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-blue-100 text-sm font-medium mb-10 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             World&apos;s First Venture Capability Ecosystem
-            <div className="absolute opacity-80 -right-65">
+            {/* <div className="absolute opacity-80 top-0 -right-10">
               <DotLottieReact src="Paperplane.lottie" loop autoplay />
-            </div>
+            </div> */}
           </div>
 
           {/* Main Headline */}

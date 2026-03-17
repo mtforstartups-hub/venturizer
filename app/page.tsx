@@ -22,12 +22,11 @@ export default function Home() {
       <Solution360 />
       {/* <WhatWeDo /> */}
       <WhatWeDoV2 />
-      {/* <ValueCreationV2 /> */}
-      <ValueCreation />
+      <ValueCreationV2 />
+      {/* <ValueCreation /> */}
       {/* <Sectors />
       <TeamAndPartners /> */}
       <ContactForm />
-
     </>
   );
 }
