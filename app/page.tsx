@@ -11,11 +11,13 @@ import ValueCreation from "./components/ValueCreation";
 import ContactForm from "./components/ContactForm";
 import ThreeUsed from "./components/ThreeUsed";
 import ValueCreationV2 from "./components/ValueCreationV2";
+import HeroSectionV2 from "./components/HeroSectionV2";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      {/* <HeroSection /> */}
+      <HeroSectionV2 />
       <Values />
       {/* <MissionVision />
       <StakeHolders /> */}
