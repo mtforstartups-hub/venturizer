@@ -125,7 +125,7 @@ export default function Solution360() {
           <motion.div
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-30 w-72 h-72 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
+            className="absolute z-30 w-64 h-64 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
           >
             {active ? (
               <motion.div
@@ -152,14 +152,12 @@ export default function Solution360() {
                 className="flex flex-col items-center"
               >
                 <span className="text-white font-bold text-4xl leading-tight">
-                  Your
-                  <br />
-                  Venture
+                  Founders
                 </span>
                 <div className="w-12 h-1.5 bg-[#EF3F3C] my-4 rounded-full" />
-                <span className="text-white/70 text-base font-medium">
+                {/* <span className="text-white/70 text-base font-medium">
                   Hover an orbit
-                </span>
+                </span> */}
               </motion.div>
             )}
           </motion.div>
@@ -196,10 +194,11 @@ export default function Solution360() {
                   }}
                 >
                   <span
-                    className={`text-base font-bold tracking-wide whitespace-nowrap px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border transition-colors duration-300 ${isActive
-                      ? "text-[#EF3F3C] border-[#EF3F3C]/30 shadow-md"
-                      : "text-[#2A2A2A] border-transparent shadow-sm"
-                      }`}
+                    className={`text-base font-bold tracking-wide whitespace-nowrap px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border transition-colors duration-300 ${
+                      isActive
+                        ? "text-[#EF3F3C] border-[#EF3F3C]/30 shadow-md"
+                        : "text-[#2A2A2A] border-transparent shadow-sm"
+                    }`}
                   >
                     {s.title}
                   </span>
@@ -264,9 +263,10 @@ export default function Solution360() {
                         // Explicit strict sizing prevents pill shapes!
                         style={{ width: ICON_SIZE, height: ICON_SIZE }}
                         className={`rounded-full shadow-xl border-4 flex items-center justify-center cursor-pointer transition-colors duration-300
-                          ${isActive
-                            ? "bg-[#21428E] border-[#EF3F3C] text-white"
-                            : "bg-white border-[#21428E] text-[#21428E] hover:border-[#EF3F3C] hover:text-[#EF3F3C]"
+                          ${
+                            isActive
+                              ? "bg-[#21428E] border-[#EF3F3C] text-white"
+                              : "bg-white border-[#21428E] text-[#21428E] hover:border-[#EF3F3C] hover:text-[#EF3F3C]"
                           }`}
                         onMouseEnter={() => {
                           setIsPaused(true);
