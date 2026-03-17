@@ -125,7 +125,7 @@ export default function Solution360() {
           <motion.div
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute z-30 w-64 h-64 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
+            className="absolute z-30 size-48 bg-[#21428E] rounded-full shadow-2xl flex flex-col items-center justify-center text-center p-8 border-8 border-white ring-8 ring-[#21428E]/10"
           >
             {active ? (
               <motion.div
@@ -133,16 +133,14 @@ export default function Solution360() {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.25 }}
-                className="flex flex-col items-center gap-3"
+                className="flex flex-col items-center "
               >
-                <active.icon size={48} className="text-[#EF3F3C]" />
-                <span className="text-white font-bold text-2xl leading-tight mt-2">
+                <active.icon size={30} className="text-[#EF3F3C]" />
+                <span className="text-white font-bold text-xl leading-tight mt-2">
                   {active.title}
                 </span>
                 <div className="w-12 h-1 bg-[#EF3F3C] rounded-full my-1" />
-                <p className="text-white/80 text-sm leading-snug px-2">
-                  {active.desc}
-                </p>
+                <p className="text-white/80 text-xs  ">{active.desc}</p>
               </motion.div>
             ) : (
               <motion.div
@@ -152,7 +150,7 @@ export default function Solution360() {
                 className="flex flex-col items-center"
               >
                 <span className="text-white font-bold text-4xl leading-tight">
-                  Founders
+                  Founder
                 </span>
                 <div className="w-12 h-1.5 bg-[#EF3F3C] my-4 rounded-full" />
                 {/* <span className="text-white/70 text-base font-medium">

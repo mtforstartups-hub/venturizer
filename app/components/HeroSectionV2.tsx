@@ -26,8 +26,13 @@ export default function HeroSectionV2() {
 
           {/* Title and Subtitle */}
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl xl:text-[7rem] font-bold text-white leading-tight">
-              <span className="block whitespace-nowrap">Build Resilient</span>
+            <h1 className="text-5xl md:text-6xl xl:text-[7rem] font-bold text-white leading-[1.31]">
+              <span className="block whitespace-nowrap">
+                Build{" "}
+                <span className="bg-linear-to-r from-blue-500 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                  Resilient
+                </span>
+              </span>
               <span className="block whitespace-nowrap text-transparent bg-clip-text bg-linear-to-r from-cyan-300 to-blue-200">
                 High-Growth
               </span>
