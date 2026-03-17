@@ -27,10 +27,10 @@ export default function ContactForm() {
 
             <div className="relative z-10">
               <h3 className="text-3xl font-bold mb-4">Enter the Ecosystem</h3>
-              <p className="text-blue-100 mb-12 text-lg">
+              {/* <p className="text-blue-100 mb-12 text-lg">
                 Whether you’re building, investing, or advising — let’s initiate
                 and integrate.
-              </p>
+              </p> */}
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -122,7 +122,7 @@ export default function ContactForm() {
               </div>
 
               <button className="w-full bg-[#2A2A2A] hover:bg-[#1a1a1a] text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg mt-4">
-                Send Message
+                Get In Touch
               </button>
             </form>
           </div>
