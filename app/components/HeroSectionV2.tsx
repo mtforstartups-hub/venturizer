@@ -1,5 +1,6 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSectionV2() {
   return (
@@ -17,7 +18,8 @@ export default function HeroSectionV2() {
             </div>
 
             {/* Absolutely anchored to the right of the badge row, doesn't affect centering */}
-            <div className="absolute left-9/10 sm:left-full ml-2 top-1/2 -translate-y-1/2 size-35 md:size-50 xl:size-60 shrink-0">
+            {/* Absolutely anchored to the right of the badge row, doesn't affect centering */}
+            <div className="absolute left-9/10 sm:left-full ml-2 top-1/2 size-35 md:size-50 xl:size-60 shrink-0 animate-fly-across">
               <DotLottieReact src="Paperplane.lottie" loop autoplay />
             </div>
           </div>
@@ -41,17 +43,23 @@ export default function HeroSectionV2() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-red-500 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/30 flex items-center justify-center gap-2">
-              Start Scaling <ArrowRight size={20} />
-            </button>
+            <Link
+              href="#values"
+              className="bg-red-500 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/30 flex items-center justify-center gap-2"
+            >
+              How We Do It <ArrowRight size={20} />
+            </Link>
 
-            <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 group">
+            <Link
+              href="#solution"
+              className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 group"
+            >
               Explore Ecosystem{" "}
               <ChevronRight
                 size={20}
                 className="group-hover:translate-x-1 transition-transform"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
