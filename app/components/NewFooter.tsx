@@ -29,7 +29,7 @@ export default function NewFooter() {
     <footer className="bg-[#111111] border-t border-gray-800">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Column 1: Logo + tagline */}
           <div className="flex flex-col gap-4">
             <Image
@@ -67,7 +67,7 @@ export default function NewFooter() {
           </div>
 
           {/* Column 2: Navigation links */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:items-center">
             <h3 className="text-white text-sm font-semibold uppercase tracking-widest">
               Navigation
             </h3>
@@ -86,8 +86,8 @@ export default function NewFooter() {
           </div>
 
           {/* Column 3: Contact info */}
-          <div className="flex flex-col gap-4">
-            <h3 className="text-white text-sm font-semibold uppercase tracking-widest">
+          <div className="flex flex-col gap-4 md:items-end">
+            <h3 className="text-white text-sm font-semibold uppercase tracking-widest pr-13">
               Get In Touch
             </h3>
             <div className="flex flex-col gap-3 text-sm text-gray-400">

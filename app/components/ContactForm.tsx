@@ -20,7 +20,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 max-w-7/12 mx-auto">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 lg:max-w-7/12 mx-auto">
           {/* Contact Info Side */}
 
           {/* Form Side */}
