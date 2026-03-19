@@ -92,7 +92,7 @@ export default function ContactForm() {
               </div>
 
               <button className="w-full bg-[#2A2A2A] hover:bg-[#1a1a1a] text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg mt-4">
-                Get In Touch
+                Get Access
               </button>
             </form>
           </div>

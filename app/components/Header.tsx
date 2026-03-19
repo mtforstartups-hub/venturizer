@@ -29,19 +29,6 @@ export default function Header() {
         className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-4" : "bg-transparent py-6"}`}
       >
         <div className="container max-w-7xl mx-auto px-6 flex justify-between items-center">
-          {/* Logo Placeholder */}
-          {/* <div className="text-2xl font-bold tracking-tighter flex items-center gap-2">
-                        <div className="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                            V
-                        </div>
-                        <span className={`${isScrolled ? 'text-gray-900' : 'text-white'}`}>Venture<span className="text-red-500">Scale</span></span>
-                    </div> */}
-          {/* <Image
-            src={isScrolled ? "/logo.png" : "/logo-inverted.png"}
-            alt="Logo"
-            width={160}
-            height={40}
-          /> */}
           <Image
             src={isScrolled ? "/logo.png" : "/logo-inverted.png"}
             alt="Logo"
@@ -62,9 +49,9 @@ export default function Header() {
             ))}
             <Link
               href="#contact"
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all transform hover:scale-105"
+              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full font-medium text-base transition-all transform hover:scale-105"
             >
-              Access The Ecosystem
+              Join The Ecosystem
             </Link>
           </div>
 
@@ -104,7 +91,7 @@ export default function Header() {
               href="#contact"
               className="bg-red-500 text-white px-6 py-3 rounded-lg font-medium w-full"
             >
-              Contact Us
+              Join The Ecosystem
             </Link>
           </div>
         )}
