@@ -26,7 +26,7 @@ const solutions = [
   },
   {
     id: 2,
-    title: "Legal & IP",
+    title: "Legal & Compliance",
     icon: Scale,
     desc: "Incorporation, contracts & patent filing to protect what you build.",
   },
@@ -44,14 +44,14 @@ const solutions = [
   },
   {
     id: 5,
-    title: "Strategy",
+    title: "Business Design",
     icon: LineChart,
-    desc: "Business modeling & pivot planning to keep you ahead of the curve.",
+    desc: "Business modelling to execution strategy to keep you ahead of the curve.",
   },
 ];
 
 // Spacing configuration
-const ORBIT_RADIUS = 340; // Outer track for icons
+const ORBIT_RADIUS = 370; // Outer track for icons
 const TITLE_RADIUS = 240; // Inner track for fixed titles
 const ICON_SIZE = 80; // Hardcoded size to prevent pill-shapes
 
@@ -152,7 +152,7 @@ export default function Solution360() {
                 <span className="text-white font-bold text-4xl leading-tight">
                   Founder
                 </span>
-                <div className="w-12 h-1.5 bg-[#EF3F3C] my-4 rounded-full" />
+                {/* <div className="w-12 h-1.5 bg-[#EF3F3C] my-4 rounded-full" /> */}
                 {/* <span className="text-white/70 text-base font-medium">
                   Hover an orbit
                 </span> */}
