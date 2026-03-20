@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 
 const menuItems = [
   { label: "About", href: "#values" },
-  { label: "Solutions", href: "#solution" },
-  { label: "Ventures", href: "#ventures" },
-  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "Ecosystem", href: "#solution" },
+  { label: "Solutions", href: "#ventures" },
+  { label: "Ventures", href: "#ecosystem" },
 ];
 
 export default function Header() {
@@ -29,12 +29,14 @@ export default function Header() {
         className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-4" : "bg-transparent py-6"}`}
       >
         <div className="container max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <Image
-            src={isScrolled ? "/logo.png" : "/logo-inverted.png"}
-            alt="Logo"
-            width={160}
-            height={40}
-          />
+          <Link href="#hero">
+            <Image
+              src={isScrolled ? "/logo.png" : "/logo-inverted.png"}
+              alt="Logo"
+              width={160}
+              height={40}
+            />
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

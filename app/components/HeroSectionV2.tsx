@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function HeroSectionV2() {
   return (
-    <section className="xl:min-h-[95%] bg-linear-to-t from-[#22418F] via-30% to-[#0A1838]">
+    <section
+      id="hero"
+      className="xl:min-h-[95%] bg-linear-to-t from-[#22418F] via-30% to-[#0A1838]"
+    >
       <div
         id="outer-container"
         className="w-full md:max-w-3/4 xl:max-w-3/5 px-6 sm:px-10 py-20 md:py-40 mx-auto overflow-hidden"
