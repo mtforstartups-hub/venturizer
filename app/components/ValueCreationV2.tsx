@@ -56,12 +56,12 @@ export default function ServicesSection() {
   return (
     <section
       id="ecosystem"
-      className="bg-white min-h-[80vh] flex items-center justify-center py-[100px] px-6 overflow-hidden relative"
+      className="bg-white min-h-[80vh] flex items-center justify-center py-25 px-6 overflow-hidden relative"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none" />
 
-      <div className="w-full max-w-[1200px] relative z-10">
-        <div className="mb-[80px] text-center flex flex-col items-center">
+      <div className="w-full max-w-300 relative z-10">
+        <div className="mb-20 text-center flex flex-col items-center">
           <p
             className={`text-lg md:text-xl -rotate-2 text-[#E7000B] mb-5 flex items-center gap-4 transition-all duration-700 delay-100 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           >
@@ -70,12 +70,12 @@ export default function ServicesSection() {
             {/* <span className="block h-px w-10 bg-[#E7000B] opacity-45"></span> */}
           </p>
           <h2
-            className={`font-bold text-4xl md:text-5xl text-[#2A2A2A]  mb-6 transition-all duration-800 delay-[250ms] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`font-bold text-4xl md:text-5xl text-[#2A2A2A]  mb-6 transition-all duration-800 delay-250 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             Designed for Value Creation
           </h2>
           <p
-            className={` text-[#2A2A2A]/80 max-w-[540px] transition-all duration-800 delay-[400ms] ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={` text-[#2A2A2A]/80 max-w-135 transition-all duration-800 delay-400 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           >
             Our ecosystem is meticulously designed to align incentives and solve
             the systemic challenges of key stakeholders.
@@ -89,12 +89,12 @@ export default function ServicesSection() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className={`group relative pt-[48px] px-[40px] pb-[64px] border-b border-[#21428E]/20 md:border-b-0 md:border-r last:border-b-0 md:last:border-r-0 cursor-default transition-all duration-700 ease-out hover:bg-[#21428E]/[0.02] overflow-hidden ${visibleCards.includes(i) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`group relative pt-12 px-10 pb-16 border-b border-[#21428E]/20 md:border-b-0 md:border-r last:border-b-0 md:last:border-r-0 cursor-default transition-all duration-700 ease-out hover:bg-[#21428E]/2 overflow-hidden ${visibleCards.includes(i) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${0.45 + i * 0.15}s` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#21428E]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#21428E]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              <span className=" text-[160px] font-semibold text-[#21428E]/[0.03] group-hover:text-[#21428E]/[0.08] absolute -top-6 -right-4 leading-none transition-colors duration-500 pointer-events-none select-none">
+              <span className=" text-[160px] font-semibold text-[#21428E]/3 group-hover:text-[#21428E]/8 absolute -top-6 -right-4 leading-none transition-colors duration-500 pointer-events-none select-none">
                 0{i + 1}
               </span>
 
