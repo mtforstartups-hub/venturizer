@@ -5,12 +5,14 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const RECIPIENTS = [
-  "sid@venturizer.in",
-  "ash@venturizer.in",
-  "connect@venturizer.in",
-  "mudra@venturizer.in",
-];
+// const RECIPIENTS = [
+//   "sid@venturizer.in",
+//   "ash@venturizer.in",
+//   "connect@venturizer.in",
+//   "mudra@venturizer.in",
+// ];
+
+const RECIPIENTS = ["connect@venturizer.in"];
 
 const FROM_EMAIL = "no-reply@venturizer.in";
 
