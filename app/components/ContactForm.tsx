@@ -29,7 +29,6 @@ const STAGE_OPTIONS = [
   { value: "mvp", label: "MVP / Seed" },
   { value: "early-traction", label: "Early Traction" },
   { value: "series-a", label: "Series A" },
-  { value: "series-b-plus", label: "Series B+" },
   { value: "growth", label: "Growth Stage" },
 ];
 
@@ -80,7 +79,7 @@ export default function ContactForm() {
         </div>
 
         {/* Card — identical to original */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 lg:max-w-7/10 mx-auto">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 lg:max-w-7/12 mx-auto">
           <div className="p-12 lg:p-16 bg-[#22418F] relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#EF3F3C] rounded-tl-full opacity-10 z-0" />
 
@@ -99,7 +98,6 @@ export default function ContactForm() {
             <form action={action} className="relative z-10 space-y-10">
               {/* ── SECTION 1: Identity ── */}
               <div>
-                <p className={sectionHeadingClass}>01 — Your Identity</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-1">
                     <label className={labelClass}>Full Name</label>
@@ -154,13 +152,8 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              {/* Divider */}
-              <div className="border-t border-white/20" />
-
               {/* ── SECTION 2: Role ── */}
               <div>
-                <p className={sectionHeadingClass}>02 — Your Role</p>
-
                 <div className="space-y-1">
                   <label className={labelClass}>Joining as</label>
                   <select
@@ -199,11 +192,7 @@ export default function ContactForm() {
 
                 {/* Founder-only fields */}
                 {isFounder && (
-                  <div className="mt-6 rounded-2xl border border-white/20 p-6 space-y-6">
-                    <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/50">
-                      Founder Details
-                    </p>
-
+                  <div className="mt-6  space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-1">
                         <label className={labelClass}>Industry / Sector</label>
@@ -263,18 +252,14 @@ export default function ContactForm() {
                       <div
                         className={`space-y-1 ${isOtherIndustry ? "" : "md:col-span-2"}`}
                       >
-                        <label className={labelClass}>
-                          Pitch Deck URL{" "}
-                          <span className="font-normal opacity-70">
-                            (Optional)
-                          </span>
-                        </label>
+                        <label className={labelClass}>Pitch Deck URL</label>
                         <input
                           type="url"
                           name="pitchDeckUrl"
                           defaultValue={fields?.pitchDeckUrl}
                           className={inputClass}
                           placeholder="drive.google.com/…"
+                          required={isFounder}
                         />
                         <FieldError
                           messages={errors?.fieldErrors?.pitchDeckUrl}
@@ -285,16 +270,10 @@ export default function ContactForm() {
                 )}
               </div>
 
-              {/* Divider */}
-              <div className="border-t border-white/20" />
-
               {/* ── SECTION 3: Goals ── */}
               <div>
-                <p className={sectionHeadingClass}>
-                  03 — Your Goals{" "}
-                  <span className="normal-case font-normal opacity-60 tracking-normal">
-                    (Optional)
-                  </span>
+                <p className="text-sm font-semibold text-white">
+                  Your Goals (Optional)
                 </p>
                 <textarea
                   name="message"

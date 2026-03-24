@@ -34,14 +34,13 @@ const ContactSchema = z
     joiningAs: z.enum(["founder", "investor", "mentor", "others"], {
       error: "Please select a valid role.",
     }),
-    joiningAsOther: z.string().optional(),
+    joiningAsOther: z.string(),
     // Founder-only fields
-    industry: z.string().optional(),
-    industryOther: z.string().optional(),
-    stage: z.string().optional(),
+    industry: z.string(),
+    industryOther: z.string(),
+    stage: z.string(),
     pitchDeckUrl: z
       .url({ error: "Please enter a valid URL." })
-      .optional()
       .or(z.literal("")),
     message: z.string().optional(),
   })
@@ -131,7 +130,6 @@ const STAGE_LABELS: Record<string, string> = {
   mvp: "MVP / Seed",
   "early-traction": "Early Traction",
   "series-a": "Series A",
-  "series-b-plus": "Series B+",
   growth: "Growth Stage",
 };
 
