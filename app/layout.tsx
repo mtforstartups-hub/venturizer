@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Venturizer",
-  description: "A venture capability ecosystem enabling founders in their 0-100 cr revenue journey.",
+  description:
+    "Venture ecosystem supporting founders from startup to scale-up.",
   metadataBase: new URL("https://www.venturizer.in"),
   alternates: {
     canonical: "/",
@@ -37,8 +38,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <NewFooter />
-        <GoogleAnalytics gaId="G-H23CX6WBP3" />
       </body>
+      <GoogleAnalytics gaId="G-H23CX6WBP3" />
     </html>
   );
 }
