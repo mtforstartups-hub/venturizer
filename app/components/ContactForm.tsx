@@ -258,7 +258,7 @@ export default function ContactForm() {
                           name="pitchDeckUrl"
                           defaultValue={fields?.pitchDeckUrl}
                           className={inputClass}
-                          placeholder="drive.google.com/…"
+                          placeholder="Public Access Link"
                           required={isFounder}
                         />
                         <FieldError
@@ -280,7 +280,7 @@ export default function ContactForm() {
                   rows={4}
                   defaultValue={fields?.message}
                   className={`${inputClass} resize-none`}
-                  placeholder="- We strongly believe in long-term associations. What are you looking for?"
+                  placeholder="We strongly believe in long-term associations. What are you looking for?"
                 />
                 <FieldError messages={errors?.fieldErrors?.message} />
               </div>
